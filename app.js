@@ -100,8 +100,8 @@ const Services = () =>
         [
           { label: "Creative sprints", value: "4-6 weeks" },
           { label: "Avg. client growth", value: "2.8x" },
-          { label: "Foreign clients", value: "18+" },
-          { label: "Clients across India", value: "120+" },
+          { label: "Foreign clients", value: "12+" },
+          { label: "Clients across India", value: "50+" },
         ].map((stat) =>
           h(
             "div",
