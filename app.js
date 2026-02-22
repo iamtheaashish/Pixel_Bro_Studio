@@ -153,13 +153,13 @@ const Contact = () =>
         [
           {
             name: "Aashish Raj",
-            role: "Lead SDE",
+            role: "Lead Engineer",
             contact: "iamtheaashish@gmail.com",
           },
           {
             name: "Himanshu Sharma",
             role: "Lead Designer",
-            contact: "design@pixelbro.studio",
+            contact: "himanshu.s8010@gmail.com",
           },
           {
             name: "Ritik Singhal",
