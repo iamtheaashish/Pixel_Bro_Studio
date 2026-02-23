@@ -37,7 +37,9 @@ const Hero = () =>
         h(
           "h1",
           null,
-          "Designs that convert. Web apps that scale."
+          "Designs that convert.",
+          h("br"),
+          "Web apps that scale."
         ),
         h(
           "p",
@@ -67,7 +69,7 @@ const Services = () =>
       h(
         "p",
         { className: "section-subtitle" },
-        "Focused services for B2B teams: design that converts and web apps that scale."
+        "Focused services for B2B teams:"
       ),
       h(
         "div",
