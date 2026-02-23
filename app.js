@@ -11,7 +11,7 @@ const Nav = () =>
         "div",
         { className: "logo" },
         h("div", { className: "logo-mark" }, "PB"),
-        h("div", null, "Pixel Bro Design Studio")
+        h("div", null, "Pixel Bro Studio")
       ),
       h(
         "div",
@@ -42,7 +42,7 @@ const Hero = () =>
         h(
           "p",
           null,
-          "People buy stories, not products. ~ Seth Godin"
+          "People buy stories, not products."
         ),
         h(
           "div",
@@ -183,7 +183,7 @@ const Footer = () =>
   h(
     "footer",
     { className: "footer" },
-    h("div", { className: "container" }, `© ${new Date().getFullYear()} Pixel Bro Design Studio. All rights reserved.`)
+    h("div", { className: "container" }, `© ${new Date().getFullYear()} Pixel Bro Studio. All rights reserved.`)
   );
 
 const App = () =>
