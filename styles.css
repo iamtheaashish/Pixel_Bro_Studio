@@ -63,6 +63,13 @@ a {
   font-family: "Syne", sans-serif;
 }
 
+.logo-text {
+  font-family: "Press Start 2P", "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 .logo-mark {
   width: 40px;
   height: 40px;
@@ -70,10 +77,15 @@ a {
   display: grid;
   place-items: center;
   color: var(--yellow);
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Syne", sans-serif;
   border-radius: 4px;
+  background: rgba(255, 213, 0, 0.08);
+}
+
+.logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(255, 212, 0, 0.25));
 }
 
 .nav-links {
@@ -384,6 +396,10 @@ a {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+
+  .logo-text {
+    font-size: 10px;
   }
 
   .hero {

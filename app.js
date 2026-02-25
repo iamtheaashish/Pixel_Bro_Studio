@@ -10,8 +10,16 @@ const Nav = () =>
       h(
         "div",
         { className: "logo" },
-        h("div", { className: "logo-mark" }, "PB"),
-        h("div", null, "Pixel Bro Studio")
+        h(
+          "div",
+          { className: "logo-mark" },
+          h("img", {
+            className: "logo-img",
+            src: "logo.jpeg",
+            alt: "Pixel Bro Studio logo",
+          })
+        ),
+        h("div", { className: "logo-text" }, "Pixel Bro Studio")
       ),
       h(
         "div",
@@ -135,9 +143,9 @@ const Work = () =>
         h(
           "p",
           null,
-          "“Pixel Bro delivered our business website and sales visuals with speed and precision. Our lead quality improved within weeks.”"
+          "“Pixel Bro delivered our business card and sales visuals with speed and precision. Our lead quality improved within weeks.”"
         ),
-        h("h4", null, "— Priya K., Growth Lead, LumenTech")
+        h("h4", null, "— Aadi Jain, Owner, Shri Aadinath Paper Traders")
       )
     )
   );
