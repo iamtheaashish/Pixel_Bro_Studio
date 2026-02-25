@@ -31,7 +31,7 @@ const Nav = () =>
     )
   );
 
-const Hero = () =>
+const Hero = ({ onStartProject }) =>
   h(
     "section",
     { className: "hero", id: "studio" },
@@ -57,7 +57,11 @@ const Hero = () =>
         h(
           "div",
           { className: "cta-row" },
-          h("a", { className: "btn primary", href: "#contact" }, "Start a project"),
+          h(
+            "button",
+            { className: "btn primary", type: "button", onClick: onStartProject },
+            "Start a project"
+          ),
           h("a", { className: "btn", href: "https://drive.google.com", target: "_blank", rel: "noreferrer" }, "Portfolio"),
           h("a", { className: "btn", href: "https://youtube.com", target: "_blank", rel: "noreferrer" }, "Testimonials"),
 
@@ -65,6 +69,88 @@ const Hero = () =>
       )
     )
   );
+
+const ContactFormModal = ({ isOpen, onClose, onSubmit }) =>
+  isOpen
+    ? h(
+        "div",
+        {
+          className: "modal-overlay",
+          onClick: (event) => {
+            if (event.target === event.currentTarget) {
+              onClose();
+            }
+          },
+        },
+        h(
+          "div",
+          { className: "modal" },
+          h(
+            "div",
+            { className: "modal-header" },
+            h("h3", { className: "modal-title" }, "Start a project"),
+            h(
+              "button",
+              { className: "modal-close", type: "button", onClick: onClose, "aria-label": "Close form" },
+              "x"
+            )
+          ),
+          h(
+            "form",
+            { className: "modal-form", onSubmit },
+            h(
+              "div",
+              { className: "form-grid" },
+              h(
+                "label",
+                { className: "form-field" },
+                h("span", null, "Name"),
+                h("input", { type: "text", name: "name", placeholder: "Your full name", required: true })
+              ),
+              h(
+                "label",
+                { className: "form-field" },
+                h("span", null, "Email"),
+                h("input", { type: "email", name: "email", placeholder: "you@email.com", required: true })
+              ),
+              h(
+                "label",
+                { className: "form-field" },
+                h("span", null, "Phone number"),
+                h("input", { type: "tel", name: "phone", placeholder: "+91 98765 43210" })
+              ),
+              h(
+                "label",
+                { className: "form-field" },
+                h("span", null, "Business name"),
+                h("input", { type: "text", name: "business", placeholder: "Your company" })
+              ),
+              h(
+                "label",
+                { className: "form-field full" },
+                h("span", null, "Additional note"),
+                h("textarea", { name: "note", rows: 4, placeholder: "Tell us about the project" })
+              )
+            ),
+            h(
+              "div",
+              { className: "form-info" },
+              h(
+                "p",
+                { className: "form-info-text" },
+                "When you click 'Send inquiry', your email app or website will open with this form pre-filled. Review the details and send. That's all!"
+              )
+            ),
+            h(
+              "div",
+              { className: "form-actions" },
+              h("button", { className: "btn", type: "button", onClick: onClose }, "Cancel"),
+              h("button", { className: "btn primary", type: "submit" }, "Send inquiry")
+            )
+          )
+        )
+      )
+    : null;
 
 const Services = () =>
   h(
@@ -164,7 +250,7 @@ const Contact = () =>
           {
             name: "Aashish Raj",
             role: "Lead Engineer",
-            contact: "iamtheaashish@gmail.com",
+            contact: "iamtheaashish@outlook.com",
           },
           {
             name: "Himanshu Sharma",
@@ -196,17 +282,49 @@ const Footer = () =>
     h("div", { className: "container" }, `© ${new Date().getFullYear()} Pixel Bro Studio. All rights reserved.`)
   );
 
-const App = () =>
-  h(
+const App = () => {
+  const [isFormOpen, setIsFormOpen] = React.useState(false);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone") || "N/A";
+    const business = formData.get("business") || "N/A";
+    const note = formData.get("note") || "N/A";
+
+    const subject = `New project inquiry - ${business !== "N/A" ? business : name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Business: ${business}`,
+      `Additional note: ${note}`,
+    ].join("\n");
+
+    const mailto = `mailto:pixelbrostudio@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    event.target.reset();
+    setIsFormOpen(false);
+  };
+
+  return h(
     React.Fragment,
     null,
     h(Nav),
-    h(Hero),
+    h(Hero, { onStartProject: () => setIsFormOpen(true) }),
     h(Services),
     h(Work),
     h(Contact),
-    h(Footer)
+    h(Footer),
+    h(ContactFormModal, {
+      isOpen: isFormOpen,
+      onClose: () => setIsFormOpen(false),
+      onSubmit: handleFormSubmit,
+    })
   );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(h(App));
