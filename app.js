@@ -16,7 +16,16 @@ const Nav = () =>
         "div",
         { className: "nav-links" },
         ["Home", "Services", "Featured", "Contact"].map((item) =>
-          h("a", { key: item, href: `#${item.toLowerCase()}` }, item)
+          h("a", {
+            key: item,
+            href: item.toLowerCase() === "home" ? "#" : `#${item.toLowerCase()}`,
+            onClick: (e) => {
+              if (item.toLowerCase() === "home") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }
+          }, item)
         )
       )
     )
