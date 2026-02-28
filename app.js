@@ -220,7 +220,7 @@ const Work = () =>
         h(
           "p",
           null,
-          "“Pixel Bro delivered our business card and sales visuals with speed and precision. Our lead quality improved within weeks.”"
+          "“Himanshu delivered our business card and sales visuals with speed and precision. Our lead quality has improved.”"
         ),
         h("h4", null, "— Aadi Jain, Owner, Shri Aadinath Paper Traders")
       )
