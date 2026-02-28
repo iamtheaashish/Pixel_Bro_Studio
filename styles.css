@@ -1,9 +1,15 @@
 :root {
-  --yellow: #ffd500;
-  --black: #0b0b0b;
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --accent: #0891b2;
+  --black: #0f172a;
   --white: #ffffff;
-  --gray: #f0f0f0;
-  --accent: rgba(255, 212, 0, 0.15);
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-600: #475569;
+  --gray-700: #334155;
 }
 
 * {
@@ -17,11 +23,11 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Mono", monospace;
-  background: var(--black);
-  color: var(--white);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--white);
+  color: var(--black);
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -35,14 +41,16 @@ a {
   margin: 0 auto;
 }
 
+/* Navigation */
 .nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 11, 11, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .nav-inner {
@@ -56,68 +64,58 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 16px;
-  font-family: "Syne", sans-serif;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--black);
 }
 
-.logo-text {
-  font-family: "Press Start 2P", "IBM Plex Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.logo-mark {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--yellow);
-  display: grid;
-  place-items: center;
-  color: var(--yellow);
-  border-radius: 4px;
-  background: rgba(255, 213, 0, 0.08);
-}
-
-.logo-img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(255, 212, 0, 0.25));
+.logo-heading {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--black);
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links {
   display: flex;
   gap: 32px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-size: 15px;
+  text-transform: none;
+  letter-spacing: 0;
   font-weight: 500;
+  color: var(--gray-700);
 }
 
 .nav-links a {
   transition: color 0.3s ease;
   position: relative;
+  color: var(--gray-700);
 }
 
 .nav-links a:hover {
-  color: var(--yellow);
+  color: var(--primary);
 }
 
+/* Hero Section */
 .hero {
-  padding: 120px 0 100px;
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 15% 15%, rgba(255, 212, 0, 0.1), transparent 50%),
-    radial-gradient(circle at 90% 30%, rgba(255, 255, 255, 0.05), transparent 40%);
+  background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.08), transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(6, 182, 212, 0.06), transparent 50%);
   pointer-events: none;
 }
 
@@ -130,19 +128,21 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(32px, 6vw, 56px);
-  line-height: 1.15;
-  margin-bottom: 24px;
-  font-family: "Syne", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: clamp(36px, 7vw, 64px);
+  line-height: 1.2;
+  margin-bottom: 28px;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  color: var(--black);
 }
 
 .hero p {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 20px;
-  line-height: 1.7;
+  font-size: 18px;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
 .cta-row {
@@ -153,53 +153,58 @@ a {
 }
 
 .btn {
-  padding: 12px 28px;
-  border-radius: 6px;
+  padding: 13px 28px;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border: 1.5px solid var(--white);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  border: 1.5px solid var(--gray-700);
   background: transparent;
-  color: var(--white);
+  color: var(--black);
   transition: all 0.3s ease;
   cursor: pointer;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .btn.primary {
-  background: var(--yellow);
-  color: var(--black);
-  border-color: var(--yellow);
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 212, 0, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
 }
 
 .btn.primary:hover {
-  background: #ffe933;
-  box-shadow: 0 8px 20px rgba(255, 212, 0, 0.3);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
+/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(8, 8, 8, 0.75);
+  background: rgba(15, 23, 42, 0.6);
   display: grid;
   place-items: center;
   z-index: 120;
   padding: 24px;
+  backdrop-filter: blur(4px);
 }
 
 .modal {
   width: min(640px, 92vw);
-  background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
   border-radius: 12px;
   padding: 28px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .modal-header {
@@ -210,21 +215,29 @@ a {
 }
 
 .modal-title {
-  font-size: 20px;
-  font-family: "Syne", sans-serif;
-  letter-spacing: -0.3px;
+  font-size: 22px;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--black);
 }
 
 .modal-close {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--gray-200);
   background: transparent;
-  color: var(--white);
+  color: var(--gray-700);
   width: 36px;
   height: 36px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  border-color: var(--gray-300);
+  color: var(--black);
 }
 
 .modal-form {
@@ -241,10 +254,10 @@ a {
 .form-field {
   display: grid;
   gap: 8px;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gray-700);
 }
 
 .form-field.full {
@@ -252,25 +265,28 @@ a {
 }
 
 .form-field span {
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
 }
 
 .form-field input,
 .form-field textarea {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: 8px;
   padding: 12px 14px;
-  color: var(--white);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 13px;
+  color: var(--black);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: rgba(255, 212, 0, 0.6);
-  box-shadow: 0 0 0 2px rgba(255, 212, 0, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .form-actions {
@@ -281,31 +297,33 @@ a {
 }
 
 .form-info {
-  background: rgba(255, 212, 0, 0.08);
-  border: 1px solid rgba(255, 212, 0, 0.2);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 8px;
   padding: 14px;
 }
 
 .form-info-text {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 .hero-card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
   padding: 32px;
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: var(--gray-50);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .hero-card h3 {
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 18px;
-  font-weight: 600;
-  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--black);
 }
 
 .hero-list {
@@ -317,28 +335,32 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  color: var(--gray-600);
+  font-weight: 500;
 }
 
+/* Sections */
 .section {
   padding: 100px 0;
 }
 
 .section-title {
-  font-size: 32px;
-  margin-bottom: 12px;
-  font-family: "Syne", sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 16px;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  color: var(--black);
 }
 
 .section-subtitle {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--gray-600);
   margin-bottom: 48px;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.9;
   max-width: 600px;
+  font-weight: 500;
 }
 
 .grid-3 {
@@ -348,37 +370,39 @@ a {
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
   padding: 32px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white);
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 212, 0, 0.4);
-  background: rgba(255, 212, 0, 0.05);
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
 }
 
 .card h4 {
-  margin-bottom: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Syne", sans-serif;
-  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.5px;
+  color: var(--black);
 }
 
 .card p {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
-  line-height: 1.7;
-}
+  color: var(--gray-600);
+  font-size: 16px;
+  line-height: 1.8;
+}}
 
 .highlight {
-  color: var(--yellow);
-  font-weight: 500;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .stats {
@@ -389,25 +413,25 @@ a {
 }
 
 .stat {
-  background: linear-gradient(135deg, var(--yellow), #ffde00);
-  color: var(--black);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--white);
   padding: 24px;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  box-shadow: 0 4px 15px rgba(255, 212, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
 }
 
 .stat span:first-child {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: "Syne", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .stat span:last-child {
-  font-size: 12px;
+  font-size: 13px;
   opacity: 0.9;
 }
 
@@ -417,18 +441,20 @@ a {
 }
 
 .project {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--gray-200);
   padding: 24px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: grid;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white);
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .project:hover {
-  border-color: rgba(255, 212, 0, 0.3);
-  background: rgba(255, 212, 0, 0.03);
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1);
 }
 
 .project-tags {
@@ -438,24 +464,28 @@ a {
 }
 
 .tag {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--gray-300);
   padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  background: var(--gray-50);
   transition: all 0.2s ease;
+  color: var(--gray-700);
 }
 
 .tag:hover {
-  border-color: var(--yellow);
-  color: var(--yellow);
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.08);
 }
 
+/* Contact */
 .contact {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--gray-200);
   padding: 100px 0;
+  background: var(--gray-50);
 }
 
 .contact-grid {
@@ -465,51 +495,55 @@ a {
 }
 
 .contact-card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
   padding: 28px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white);
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .contact-card:hover {
-  border-color: rgba(255, 212, 0, 0.4);
-  background: rgba(255, 212, 0, 0.05);
+  border-color: var(--primary);
+  background: var(--white);
   transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
 }
 
 .contact-card h4 {
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 8px;
-  font-weight: 600;
-  font-family: "Syne", sans-serif;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.5px;
+  color: var(--black);
 }
 
 .contact-card p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+  color: var(--gray-600);
   margin-bottom: 8px;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 500;
 }
 
+/* Footer */
 .footer {
   padding: 40px 0 60px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--gray-600);
+  font-size: 14px;
+  border-top: 1px solid var(--gray-200);
   margin-top: 40px;
+  background: var(--white);
+  font-weight: 500;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-  }
-
-  .logo-text {
-    font-size: 10px;
   }
 
   .hero {
@@ -529,16 +563,16 @@ a {
   }
 
   .section-title {
-    font-size: 24px;
+    font-size: clamp(24px, 4.5vw, 36px);
   }
 
   .hero h1 {
-    font-size: clamp(24px, 5vw, 40px);
+    font-size: clamp(28px, 6vw, 44px);
   }
 
   .btn {
-    padding: 11px 24px;
-    font-size: 11px;
+    padding: 11px 20px;
+    font-size: 13px;
   }
 
   .contact {
@@ -557,13 +591,7 @@ a {
 
   .logo {
     gap: 10px;
-    font-size: 14px;
-  }
-
-  .logo-mark {
-    width: 36px;
-    height: 36px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .hero {
@@ -571,13 +599,14 @@ a {
   }
 
   .hero h1 {
-    font-size: clamp(20px, 4vw, 32px);
-    margin-bottom: 16px;
+    font-size: clamp(24px, 5.5vw, 36px);
+    margin-bottom: 18px;
   }
 
   .hero p {
-    font-size: 13px;
-    margin-bottom: 16px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    line-height: 1.7;
   }
 
   .cta-row {
@@ -586,8 +615,8 @@ a {
   }
 
   .btn {
-    padding: 10px 20px;
-    font-size: 10px;
+    padding: 11px 22px;
+    font-size: 14px;
   }
 
   .section {
@@ -595,12 +624,13 @@ a {
   }
 
   .section-title {
-    font-size: 20px;
+    font-size: clamp(22px, 4vw, 28px);
   }
 
   .section-subtitle {
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 32px;
+    line-height: 1.7;
   }
 
   .grid-3 {
@@ -613,11 +643,12 @@ a {
   }
 
   .card h4 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .card p {
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .stats {
@@ -644,6 +675,6 @@ a {
 
   .footer {
     padding: 30px 0 40px;
-    font-size: 11px;
+    font-size: 13px;
   }
 }

@@ -10,16 +10,7 @@ const Nav = () =>
       h(
         "div",
         { className: "logo" },
-        h(
-          "div",
-          { className: "logo-mark" },
-          h("img", {
-            className: "logo-img",
-            src: "logo.jpeg",
-            alt: "Pixel Bro Studio logo",
-          })
-        ),
-        h("div", { className: "logo-text" }, "Pixel Bro Studio")
+        h("h2", { className: "logo-heading" }, "Pixel Bro Studio")
       ),
       h(
         "div",
@@ -51,7 +42,7 @@ const Hero = ({ onStartProject }) =>
         ),
         h(
           "p",
-          null,
+          { className: "highlight" },
           "People buy stories, not products."
         ),
         h(
@@ -221,7 +212,7 @@ const Work = () =>
       h(
         "p",
         { className: "section-subtitle" },
-        "What businesses say about working with Pixel Bro Design Studio."
+        "What businesses say about working with Bro Studio."
       ),
       h(
         "div",
@@ -279,7 +270,7 @@ const Footer = () =>
   h(
     "footer",
     { className: "footer" },
-    h("div", { className: "container" }, `© ${new Date().getFullYear()} Pixel Bro Studio. All rights reserved.`)
+    h("div", { className: "container" }, `© ${new Date().getFullYear()} Bro Studio. All rights reserved.`)
   );
 
 const App = () => {
