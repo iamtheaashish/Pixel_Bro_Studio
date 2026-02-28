@@ -279,7 +279,7 @@ const Footer = () =>
   h(
     "footer",
     { className: "footer" },
-    h("div", { className: "container" }, `© ${new Date().getFullYear()} Bro Studio. All rights reserved.`)
+    h("div", { className: "container" }, `© ${new Date().getFullYear()} Pixel Bro Studio. All rights reserved.`)
   );
 
 const App = () => {
