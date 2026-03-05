@@ -250,28 +250,33 @@ const Contact = () =>
         [
           {
             name: "Aashish Raj",
-            role: "Lead Engineering",
+            role: "Chief Technology Officer (CTO)",
             contact: "iamtheaashish@outlook.com",
           },
           {
             name: "Himanshu Sharma",
-            role: "Lead Designing",
+            role: "Head of Design",
             contact: "himanshu.s8010@gmail.com",
           },
           {
             name: "Imran Ansari",
-            role: "Lead Marketing & Sales",
+            role: "Head of Growth & Sales",
             contact: "imranscalez789@gmail.com",
           },
           {
             name: "Kapsay Laukik",
-            role: "Lead Editing",
+            role: "Head of Video Production",
             contact: "kapsaylaukik@gmail.com",
           },
           {
             name: "Ritik Singhal",
-            role: "Lead Designing",
+            role: "Senior Design Lead",
             contact: "singhalritik640@gmail.com",
+          },
+          {
+            name: "Support Team",
+            role: "Any questions? Ask away.",
+            contact: "pixelbrostudio@outlook.com",
           },
         ].map((member) =>
           h(
