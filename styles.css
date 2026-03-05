@@ -517,7 +517,7 @@ a {
 .contact-grid {
   display: grid;
   gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 34px;
 }
 
@@ -626,6 +626,10 @@ a {
 
   .contact {
     padding: 70px 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }  
 
