@@ -129,7 +129,12 @@ const ContactFormModal = ({ isOpen, onClose, onSubmit }) =>
                 "label",
                 { className: "form-field full" },
                 h("span", null, "Additional note"),
-                h("textarea", { name: "note", rows: 4, placeholder: "Tell us about the project" })
+                h("textarea", {
+                  name: "note",
+                  rows: 4,
+                  maxLength: 280,
+                  placeholder: "Tell us about the project (max 280 characters)",
+                })
               )
             ),
             h(

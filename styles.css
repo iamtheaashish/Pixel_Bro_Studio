@@ -282,6 +282,14 @@ a {
   transition: border-color 0.2s ease;
 }
 
+.form-field textarea {
+  resize: none !important;
+}
+
+.form-field textarea::-webkit-resizer {
+  display: none;
+}
+
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
