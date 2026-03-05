@@ -261,22 +261,22 @@ const Contact = () =>
           {
             name: "Himanshu Sharma",
             role: "Head of Design",
-            contact: "himanshu.s8010@gmail.com",
+            contact: "himanshu.s8010@outlook.com",
           },
           {
             name: "Imran Ansari",
             role: "Head of Growth & Sales",
-            contact: "imranscalez789@gmail.com",
+            contact: "imranscalez789@outlook.com",
           },
           {
             name: "Kapsay Laukik",
             role: "Head of Video Production",
-            contact: "kapsaylaukik@gmail.com",
+            contact: "kapsaylaukik@outlook.com",
           },
           {
             name: "Ritik Singhal",
             role: "Senior Design Lead",
-            contact: "singhalritik640@gmail.com",
+            contact: "singhalritik640@outlook.com",
           },
           {
             name: "Support Team",
