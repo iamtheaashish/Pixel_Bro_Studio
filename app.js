@@ -243,23 +243,34 @@ const Contact = () =>
     h(
       "div",
       { className: "container" },
+      h("h2", { className: "section-title" }, "Our Proactive Team"),
       h(
         "div",
         { className: "contact-grid" },
         [
           {
             name: "Aashish Raj",
-            role: "Lead Engineer",
+            role: "Lead Engineering",
             contact: "iamtheaashish@outlook.com",
           },
           {
             name: "Himanshu Sharma",
-            role: "Lead Designer",
+            role: "Lead Designing",
             contact: "himanshu.s8010@gmail.com",
           },
           {
+            name: "Imran Ansari",
+            role: "Lead Marketing & Sales",
+            contact: "imranscalez789@gmail.com",
+          },
+          {
+            name: "Kapsay Laukik",
+            role: "Lead Editing",
+            contact: "kapsaylaukik@gmail.com",
+          },
+          {
             name: "Ritik Singhal",
-            role: "Lead Designer",
+            role: "Lead Designing",
             contact: "singhalritik640@gmail.com",
           },
         ].map((member) =>
