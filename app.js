@@ -175,16 +175,16 @@ const Services = () =>
         { className: "grid-3" },
         [
           {
-            title: "Sales Graphic Design",
-            copy: "Catalogs, one-pagers, pamphlets, and pitch decks designed to convert B2B buyers.",
+            title: "Sales Graphics",
+            copy: "Catalogs, one-pagers, pamphlets, and pitch decks crafted to win B2B clients.",
           },
           {
-            title: "Business Website Development",
-            copy: "B2B business websites built for credibility, clarity, and lead generation.",
+            title: "Business Websites",
+            copy: "B2B websites designed for credibility, clarity, and predictable lead flow.",
           },
           {
-            title: "Sales Video Editing",
-            copy: "B2B-focused video edits for testimonials, product walkthroughs, and sales narratives.",
+            title: "Sales Videos",
+            copy: "Videos crafted to showcase products, build trust, and drive buyer decisions.",
           },
         ].map((item) =>
           h(
@@ -255,7 +255,7 @@ const Contact = () =>
         [
           {
             name: "Aashish Raj",
-            role: "Chief Technology Officer (CTO)",
+            role: "Chief Technology Officer",
             contact: "iamtheaashish@outlook.com",
           },
           {
