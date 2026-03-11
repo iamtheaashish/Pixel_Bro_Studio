@@ -264,11 +264,6 @@ const Contact = () =>
             contact: "himanshu.s8010@outlook.com",
           },
           {
-            name: "Imran Ansari",
-            role: "Head of Growth & Sales",
-            contact: "imranscalez789@outlook.com",
-          },
-          {
             name: "Kapsay Laukik",
             role: "Head of Video Production",
             contact: "kapsaylaukik@outlook.com",
