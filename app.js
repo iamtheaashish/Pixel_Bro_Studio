@@ -41,7 +41,7 @@ const Hero = ({ onStartProject }) =>
       h(
         "div",
         null,
-        h("p", { className: "highlight" }, "Become imposible to ignore."),
+        h("p", { className: "highlight" }, "Become impossible to ignore."),
         h(
           "h1",
           null,
