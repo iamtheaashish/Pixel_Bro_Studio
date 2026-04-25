@@ -4,16 +4,179 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixel Bro Studio</title>
+    <meta
+      name="description"
+      content="Pixel Bro Studio creates custom CRM, ERP, and business software solutions for growing companies."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <header class="navbar">
+      <div class="navbar__brand">Pixel Bro Studio</div>
+    </header>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="app.js"></script>
+    <main>
+      <section class="hero section reveal">
+        <div class="hero__content">
+          <p class="eyebrow">Custom software for modern operations</p>
+          <h1>Build the systems that keep your business moving.</h1>
+          <p class="hero__text">
+            Pixel Bro Studio designs and develops clear, reliable software for teams that
+            need structure, visibility, and automation without the noise.
+          </p>
+          <div class="hero__keywords" aria-label="Key services">
+            <span>Custom CRM development</span>
+            <span>Business management software</span>
+            <span>Custom software development</span>
+            <span>CRM for small business</span>
+            <span>ERP for small business</span>
+            <span>SaaS solutions</span>
+            <span>Automation software for business</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split reveal" id="services">
+        <div class="section__heading">
+          <p class="eyebrow">What we build</p>
+          <h2>Software shaped around your process.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Custom CRM development</h3>
+            <p>
+              Track leads, accounts, and relationships in a system tailored to how your
+              team actually works.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Business management software</h3>
+            <p>
+              Centralize day-to-day operations so your team spends less time switching tools
+              and more time getting work done.
+            </p>
+          </article>
+          <article class="card">
+            <h3>ERP for small business</h3>
+            <p>
+              Connect finance, inventory, service, and reporting in a lean system built for
+              smaller teams.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split split--reverse reveal" id="approach">
+        <div class="section__heading">
+          <p class="eyebrow">How we work</p>
+          <h2>Simple design. Practical delivery. Durable results.</h2>
+        </div>
+        <div class="stack">
+          <div class="stack__item">
+            <span>01</span>
+            <div>
+              <h3>Discover</h3>
+              <p>We map the workflow, tools, and bottlenecks that matter most.</p>
+            </div>
+          </div>
+          <div class="stack__item">
+            <span>02</span>
+            <div>
+              <h3>Build</h3>
+              <p>We create focused software with clean structure and clear user flows.</p>
+            </div>
+          </div>
+          <div class="stack__item">
+            <span>03</span>
+            <div>
+              <h3>Automate</h3>
+              <p>We reduce repetitive work with automation software for business operations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials reveal" id="testimonials">
+        <div class="section__heading section__heading--static">
+          <p class="eyebrow">Client testimonials</p>
+          <h2>Trusted by teams that value clarity and execution.</h2>
+        </div>
+
+        <div class="testimonials__viewport" aria-live="polite">
+          <div class="testimonials__track">
+            <article class="testimonial-card">
+              <img
+                src="assets/demo-crm.svg"
+                alt="Demo CRM dashboard interface"
+                class="testimonial-card__image"
+              />
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p>
+                "Pixel Bro Studio delivered a custom CRM that helped us shorten follow-up
+                cycles and improve sales visibility in the first month."
+              </p>
+              <h3>Arun Sharma, Director</h3>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                src="assets/demo-erp.svg"
+                alt="Demo ERP operations interface"
+                class="testimonial-card__image"
+              />
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p>
+                "Their ERP setup unified our operations and reporting without adding
+                complexity. Our team adopted it quickly."
+              </p>
+              <h3>Neha Patel, Operations Lead</h3>
+            </article>
+
+            <article class="testimonial-card">
+              <img
+                src="assets/demo-automation.svg"
+                alt="Demo business automation workflow interface"
+                class="testimonial-card__image"
+              />
+              <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p>
+                "The automation workflows removed repetitive admin tasks and gave us back
+                hours every week across departments."
+              </p>
+              <h3>Ravi Menon, Founder</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta reveal" id="contact">
+        <p class="eyebrow">SaaS solutions</p>
+        <h2>Need a custom system for your business?</h2>
+        <p>
+          Pixel Bro Studio helps small and growing teams move from scattered tools to a
+          focused SaaS solution that fits the way they sell, serve, and operate.
+        </p>
+        <a class="button" href="mailto:hello@pixelbrostudio.com">Start a conversation</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Pixel Bro Studio</p>
+      <p id="year"></p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#101010"/>
+  <rect x="40" y="40" width="1120" height="620" rx="20" fill="#191919" stroke="#3C3C3C"/>
+  <rect x="100" y="120" width="300" height="120" rx="14" fill="#151515" stroke="#333333"/>
+  <rect x="450" y="120" width="300" height="120" rx="14" fill="#151515" stroke="#333333"/>
+  <rect x="800" y="120" width="300" height="120" rx="14" fill="#151515" stroke="#333333"/>
+  <rect x="275" y="330" width="300" height="120" rx="14" fill="#151515" stroke="#333333"/>
+  <rect x="625" y="330" width="300" height="120" rx="14" fill="#151515" stroke="#333333"/>
+  <rect x="450" y="520" width="300" height="90" rx="14" fill="#151515" stroke="#333333"/>
+  <path d="M400 180H450" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M750 180H800" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M550 240V330" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M850 240V330" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M575 390H625" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <path d="M750 450V520" stroke="#EDEDED" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="560" cy="180" r="14" fill="#EDEDED"/>
+  <circle cx="860" cy="180" r="14" fill="#EDEDED"/>
+  <circle cx="550" cy="390" r="14" fill="#EDEDED"/>
+  <circle cx="750" cy="390" r="14" fill="#EDEDED"/>
+  <circle cx="750" cy="520" r="14" fill="#EDEDED"/>
+  <rect x="130" y="156" width="170" height="12" rx="6" fill="#8C8C8C"/>
+  <rect x="480" y="156" width="170" height="12" rx="6" fill="#8C8C8C"/>
+  <rect x="830" y="156" width="170" height="12" rx="6" fill="#8C8C8C"/>
+  <rect x="305" y="366" width="170" height="12" rx="6" fill="#8C8C8C"/>
+  <rect x="655" y="366" width="170" height="12" rx="6" fill="#8C8C8C"/>
+  <rect x="480" y="556" width="170" height="12" rx="6" fill="#8C8C8C"/>
+</svg>
